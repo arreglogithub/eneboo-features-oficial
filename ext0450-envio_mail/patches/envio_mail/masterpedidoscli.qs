@@ -85,11 +85,15 @@ function envioMail_enviarDocumento(codPedido, codCliente)
 	curImprimir.setValueBuffer("descripcion", "temp");
 	curImprimir.setValueBuffer("d_pedidoscli_codigo", codigo);
 	curImprimir.setValueBuffer("h_pedidoscli_codigo", codigo);
+<<<<<<< HEAD
+	flfactinfo.iface.pub_lanzarInforme(curImprimir, "i_pedidoscli", "", "", false, false, "", "i_pedidoscli", numCopias, rutaDocumento, true);
+=======
 	var oParam = this.iface.dameParamInformeMail(idPedido);
 	
 	if(!oParam){
 		return;
 	}
+>>>>>>> 1d1bb36721568f11d1ffe0b478bcb03098686196
 
 	var tabla:String = "clientes";
 	var emailCliente:String = flfactppal.iface.pub_componerListaDestinatarios(codCliente, tabla);

@@ -100,6 +100,17 @@ function envioMail_enviarDocumento(codAlbaran:String, codCliente:String)
 	curImprimir.setValueBuffer("descripcion", "temp");
 	curImprimir.setValueBuffer("d_albaranescli_codigo", codigo);
 	curImprimir.setValueBuffer("h_albaranescli_codigo", codigo);
+<<<<<<< HEAD
+	flfactinfo.iface.pub_lanzarInforme(curImprimir, "i_albaranescli", "", "", false, false, "", "i_albaranescli", 1, rutaDocumento, true);
+
+	var arrayDest:Array = [];
+	arrayDest[0] = [];
+	arrayDest[0]["tipo"] = "to";
+	arrayDest[0]["direccion"] = emailCliente;
+
+	var arrayAttach:Array = [];
+	arrayAttach[0] = rutaDocumento;
+=======
 	var oParam = this.iface.dameParamInformeMail(idAlbaran);
 	var oDatosPdf = new Object();
 	oDatosPdf["pdf"] = true;
@@ -130,6 +141,7 @@ function envioMail_enviarDocumento(codAlbaran:String, codCliente:String)
 	     
 	}
 }
+>>>>>>> 1d1bb36721568f11d1ffe0b478bcb03098686196
 
 function envioMail_dameParamInformeMail(idAlbaran)
 {

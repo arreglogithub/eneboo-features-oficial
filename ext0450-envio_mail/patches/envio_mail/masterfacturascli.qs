@@ -98,6 +98,19 @@ function envioMail_enviarDocumento(codFactura, codCliente)
 	curImprimir.setValueBuffer("descripcion", "temp");
 	curImprimir.setValueBuffer("d_facturascli_codigo", codigo);
 	curImprimir.setValueBuffer("h_facturascli_codigo", codigo);
+<<<<<<< HEAD
+	flfactinfo.iface.pub_lanzarInforme(curImprimir, "i_facturascli", "", "", false, false, "", "i_facturascli", 1, rutaDocumento, true);
+
+	var arrayDest:Array = [];
+	arrayDest[0] = [];
+	arrayDest[0]["tipo"] = "to";
+	arrayDest[0]["direccion"] = emailCliente;
+
+	var arrayAttach:Array = [];
+	arrayAttach[0] = rutaDocumento;
+
+	flfactppal.iface.pub_enviarCorreo(cuerpo, asunto, arrayDest, arrayAttach);
+=======
 	var oParam = this.iface.dameParamInformeMail(idFactura);
 	
 	if(!oParam){
@@ -132,6 +145,7 @@ function envioMail_enviarDocumento(codFactura, codCliente)
 	     flfacturac.iface.pub_enviarMail(datosMail); 
 	     
 	}
+>>>>>>> 1d1bb36721568f11d1ffe0b478bcb03098686196
 }
 
 function envioMail_dameParamInformeMail(idFactura)

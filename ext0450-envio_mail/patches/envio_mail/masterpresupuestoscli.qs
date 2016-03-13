@@ -105,6 +105,20 @@ function envioMail_enviarDocumento(codPresupuesto, codCliente)
 	var asunto:String = util.translate("scripts", "Presupuesto %1").arg(codPresupuesto);
 	var rutaDocumento:String = rutaIntermedia + "Pr_" + codPresupuesto + ".pdf";
 
+<<<<<<< HEAD
+	var curImprimir:FLSqlCursor = new FLSqlCursor("i_presupuestoscli");
+	curImprimir.setModeAccess(curImprimir.Insert);
+	curImprimir.refreshBuffer();
+	curImprimir.setValueBuffer("descripcion", "temp");
+	curImprimir.setValueBuffer("d_presupuestoscli_codigo", codigo);
+	curImprimir.setValueBuffer("h_presupuestoscli_codigo", codigo);
+	flfactinfo.iface.pub_lanzarInforme(curImprimir, "i_presupuestoscli", "", "", false, false, "", "i_presupuestoscli", 1, rutaDocumento, true);
+
+	var arrayDest:Array = [];
+	arrayDest[0] = [];
+	arrayDest[0]["tipo"] = "to";
+	arrayDest[0]["direccion"] = emailCliente;
+=======
 	var oDatosPdf = new Object();
 	oDatosPdf["pdf"] = true;
 	oDatosPdf["ruta"] = rutaDocumento;
@@ -121,6 +135,7 @@ function envioMail_enviarDocumento(codPresupuesto, codCliente)
 		arrayAttach[0] = rutaDocumento;
 		flfactppal.iface.pub_enviarCorreo(cuerpo, asunto, arrayDest, arrayAttach);
 	} else {
+>>>>>>> 1d1bb36721568f11d1ffe0b478bcb03098686196
 
 		var datosMail = [];
 		datosMail["subject"] = asunto;
